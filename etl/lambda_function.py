@@ -7,7 +7,7 @@ def handler(event, context):
     client = boto3.client('emr', region_name='us-east-2')
 
     cluster_id = client.run_job_flow(
-                Name='EMR-Lucas-IGTI-delta',
+                Name='EMR-lucas-IGTI-delta-01',
                 ServiceRole='EMR_DefaultRole',
                 JobFlowRole='EMR_EC2_DefaultRole',
                 VisibleToAllUsers=True,
@@ -30,7 +30,7 @@ def handler(event, context):
                             'InstanceCount': 1,
                         }
                     ],
-                    'Ec2KeyName': 'lucas-igti-usecase01',
+                    'Ec2KeyName': 'ney-igti-teste',
                     'KeepJobFlowAliveWhenNoSteps': True,
                     'TerminationProtected': False,
                     'Ec2SubnetId': 'subnet-2bd61556'
